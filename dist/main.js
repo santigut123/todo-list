@@ -1,1 +1,1 @@
-console.log("this is a test");
+(()=>{"use strict";!function(e){console.log("YAA");let t=document.createElement("div");t.setAttribute("id","header"),e.appendChild(t)}(document.querySelector("#content"))})();

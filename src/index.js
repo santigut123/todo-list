@@ -1,1 +1,2 @@
-console.log("this is a test");
+import makePage from './divs'
+makePage(document.querySelector("#content"));
