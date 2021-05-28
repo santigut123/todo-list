@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/santigut123/todo-list#readme",
   "devDependencies": {
+    "stylelint-config-standard": "^22.0.0",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0"
   }
