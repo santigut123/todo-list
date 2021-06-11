@@ -7,13 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>
-        <div id="content">
-        </div>
-        <div class ="modal-bg">
-            <div class = "modal-contents">
 
-            </div>
+    <body>
+        <div id="modalBg">
+            <div class="modal-contents">
+                <div class="modal-header">Add Todo</div>
+                <form>
+                    <div class="modalOption">Single</div>
+                    <input type="radio" name="day" value="day">
+                    <div class="modalOption">Day</div>
+                    <input type="radio" name="day" value="day">
+                    <div class="modalOption">Week</div>
+                    <input type="radio" name="day" value="day">
+
+                </form>
+                <a href="#" class="button">Submit</a>
+	</div>
+        </div>
+        <div id="content">
         </div>
     </body>
     <script src="main.js"></script>
