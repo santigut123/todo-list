@@ -49,22 +49,37 @@ const makeAddButton = () =>{
   let addButton=document.createElement("div");
   setId(addButton,"addButton");
   setContents(addButton,"+");
+  addButton.addEventListener("click",addButtonPress);
   return addButton;
 }
+const addButtonPress = () =>{
+  let modal = document.querySelector("#modalBg");
+  modal.style.visibility="visible";
+
+
+}
+const submitButtonPress = () =>{
+  let modal = document.querySelector("#modalBg");
+  modal.style.visibility="hidden";
+}
+const makeTodoContent
 const makePage = () => {
   let content = document.querySelector("#content");
   let sectionHolder= document.createElement("div");
+  let modal = document.querySelector("#modalBg");
   setId(sectionHolder,"sectionHolder");
   let todoSectionDiv=document.createElement("div");
   let infoSectionDiv= document.createElement("div");
   fillTodoDiv(todoSectionDiv);
   fillInfoDiv(infoSectionDiv);
+  let submitButton = document.querySelector("#submitButton");
+  submitButton.addEventListener("click",submitButtonPress);
   sectionHolder.appendChild(todoSectionDiv);
   sectionHolder.appendChild(infoSectionDiv);
   content.appendChild(sectionHolder);
   todoSectionDiv.appendChild(makeAddButton());
-
 }
+
 
 
 export default makePage;

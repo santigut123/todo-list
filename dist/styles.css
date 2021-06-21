@@ -40,6 +40,7 @@
   align-items: center;
   top: 0;
   display: flex;
+  visibility: hidden;
 }
 
 .modalOption {
@@ -68,6 +69,11 @@
   width: 200px;
   color: black;
   margin-top: 20px;
+}
+
+.modalTextBox {
+  background-color: rgba(80, 80, 80, 0.2);
+  height: 25px;
 }
 
 input {
