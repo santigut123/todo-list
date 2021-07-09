@@ -79,3 +79,7 @@
 input {
   flex-grow: 2;
 }
+
+#infoTitle {
+  font-size: 70px;
+}

@@ -1,4 +1,4 @@
-const todo = (title,id) =>{
+const todo = (title="", description="") =>{
   let todoStatus=false;
   let todoTitle=title;
   let todoId= 0;
@@ -6,7 +6,13 @@ const todo = (title,id) =>{
   const setTitle = (newTitle) => {
     todoTitle=newTitle;
   }
+  const setDescription = (newDescription) =>{
+    description=newDescription;
 
+  }
+  const getDescription = () =>{
+    return description;
+  }
   const getTitle = () => {
     return todoTitle;
   }
@@ -19,7 +25,7 @@ const todo = (title,id) =>{
     return todoStatus;
   }
 
-  return{setTitle,getTitle,getStatus,changeStatus};
+  return{setTitle,getTitle,getStatus,changeStatus,getDescription};
 
 }
 

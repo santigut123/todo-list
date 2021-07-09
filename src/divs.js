@@ -28,23 +28,8 @@ const makeHeader = (headerID,headerContents) =>{
   setId(header,headerID);
   setContents(header,headerContents)
   return header;
-
-
-
 }
 
-const fillTodoDiv = (todoSection) =>{
-  setId(todoSection,"todoSection");
-  let todoHeader=makeHeader("todoHeader","TODOS");
-  todoSection.appendChild(todoHeader);
-
-}
-
-const fillInfoDiv = (infoSection) =>{
-  setId(infoSection, "infoSection");
-  let infoHeader=makeHeader("infoHeader","CONTENTS");
-  infoSection.appendChild(infoHeader);
-}
 const makeAddButton = () =>{
   let addButton=document.createElement("div");
   setId(addButton,"addButton");
@@ -52,34 +37,59 @@ const makeAddButton = () =>{
   addButton.addEventListener("click",addButtonPress);
   return addButton;
 }
+
 const addButtonPress = () =>{
   let modal = document.querySelector("#modalBg");
   modal.style.visibility="visible";
-
-
 }
+
 const submitButtonPress = () =>{
   let modal = document.querySelector("#modalBg");
   modal.style.visibility="hidden";
 }
-const makeTodoContent
-const makePage = () => {
-  let content = document.querySelector("#content");
-  let sectionHolder= document.createElement("div");
-  let modal = document.querySelector("#modalBg");
-  setId(sectionHolder,"sectionHolder");
-  let todoSectionDiv=document.createElement("div");
-  let infoSectionDiv= document.createElement("div");
-  fillTodoDiv(todoSectionDiv);
-  fillInfoDiv(infoSectionDiv);
-  let submitButton = document.querySelector("#submitButton");
-  submitButton.addEventListener("click",submitButtonPress);
-  sectionHolder.appendChild(todoSectionDiv);
-  sectionHolder.appendChild(infoSectionDiv);
-  content.appendChild(sectionHolder);
-  todoSectionDiv.appendChild(makeAddButton());
+
+const makeSectionHolder = () =>{
+  let sectionHolderDiv=document.createElement("div")
+  setId(sectionHolderDiv,"sectionHolder");
+
+  return sectionHolderDiv;
 }
 
+const makeInfoSectionDiv = () =>{
 
+  let infoSectionDiv = document.createElement("div");
+  setId(infoSectionDiv, "infoSection");
+  let infoHeader=makeHeader("infoHeader","CONTENTS");
+  infoSectionDiv.appendChild(infoHeader);
 
+  return infoSectionDiv;
+}
+
+const makeTodoSectionDiv = () =>{
+
+  let todoSectionDiv = document.createElement("div");
+  setId(todoSectionDiv,"todoSection");
+  let todoHeader= makeHeader("todoHeader","TODOS");
+  todoSectionDiv.appendChild(todoHeader);
+
+  return todoSectionDiv;
+}
+
+const makeSubmitButtonDiv = () => {
+  let submitButton = document.createElement("div");
+  setId(submitButton,"#submitButton");
+  submitButton.addEventListener("click",submitButtonPress);
+  return submitButton;
+}
+const addSubmitButtonTodo = () => {
+  let todoSectionDiv = document.querySelector("#todoSection");
+  todoSectionDiv.appendChild(makeSubmitButtonDiv());
+}
+const makePage = () => {
+  let content = document.querySelector("#content");
+  let sectionHolderDiv= makeSectionHolder();
+  sectionHolderDiv.appendChild(makeTodoSectionDiv());
+  sectionHolderDiv.appendChild(makeInfoSectionDiv());
+  content.appendChild(sectionHolderDiv);
+}
 export default makePage;
